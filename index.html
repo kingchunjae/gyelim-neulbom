@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026년 7월 늘봄학교 프로그램 안내 | 광주계림초등학교</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mint:#7FD1BE; --mint-dark:#3E9C86; --mint-tint:#E7F8F4;
+    --yellow:#FFD873; --yellow-dark:#E8A93A; --yellow-tint:#FFF6E0;
+    --coral:#FF9E9E; --coral-dark:#E5696F; --coral-tint:#FFEDEE;
+    --sky:#9FD3F0; --sky-dark:#4A9BC9; --sky-tint:#EAF6FD;
+    --lav:#C7B7F0; --lav-dark:#8B6FDB; --lav-tint:#F2EEFC;
+    --peach:#FFC2D1; --peach-dark:#E77E97; --peach-tint:#FFEFF3;
+    --orange:#FFCB8E; --orange-dark:#E58F3D; --orange-tint:#FFF2E2;
+    --ink:#3A342E; --ink-soft:#6B6259; --cream:#FFFBF3;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; scroll-padding-top:5.5rem; }
+  body{ font-family:'Noto Sans KR', sans-serif; background:var(--cream); color:var(--ink); }
+  .font-display{ font-family:'Baloo 2', 'Noto Sans KR', sans-serif; }
+
+  .kicker{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--mint-dark); }
+
+  .shadow-soft{ box-shadow: 0 4px 14px -2px rgba(62,156,134,0.18), 0 2px 4px -1px rgba(62,156,134,0.10); }
+  .shadow-soft-yellow{ box-shadow: 0 6px 18px -4px rgba(232,169,58,0.35), 0 2px 6px -2px rgba(232,169,58,0.2); }
+  .shadow-card{ box-shadow: 0 2px 10px -2px rgba(58,52,46,0.10), 0 1px 3px -1px rgba(58,52,46,0.08); }
+  .shadow-card-hover{ box-shadow: 0 10px 24px -6px rgba(58,52,46,0.18), 0 4px 8px -2px rgba(58,52,46,0.10); }
+
+  .btn-cta{
+    background: var(--yellow-dark);
+    color:#40300a;
+    transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease;
+  }
+  .btn-cta:hover{ background:#d8952e; transform:scale(1.02); }
+  .btn-cta:focus{ outline:none; box-shadow: 0 0 0 4px rgba(232,169,58,0.4); }
+  .btn-cta:active{ transform:scale(0.97); }
+  .btn-cta:disabled{ opacity:.5; cursor:not-allowed; }
+
+  .btn-ghost{
+    background:#fff; color:var(--mint-dark); border:2px solid var(--mint);
+    transition: transform .15s ease, background-color .15s ease;
+  }
+  .btn-ghost:hover{ background:var(--mint-tint); transform:scale(1.02); }
+  .btn-ghost:focus{ outline:none; box-shadow:0 0 0 4px rgba(127,209,190,0.35); }
+  .btn-ghost:active{ transform:scale(0.97); }
+
+  .navpill{
+    background:var(--mint-tint); color:var(--mint-dark); font-weight:700; font-size:13px;
+    transition: background-color .15s ease, color .15s ease, transform .15s ease;
+  }
+  .navpill:hover{ background:#D8F2EA; transform:translateY(-1px); }
+  .navpill:focus{ outline:none; box-shadow:0 0 0 3px rgba(127,209,190,0.4); }
+
+  .tab-btn{
+    transition: transform .15s ease, background-color .15s ease, color .15s ease, box-shadow .15s ease;
+    color: var(--ink-soft);
+  }
+  .tab-btn:hover{ transform:translateY(-2px); }
+  .tab-btn:focus{ outline:none; box-shadow:0 0 0 3px rgba(127,209,190,0.4); }
+  .tab-btn.active{ color:#fff; box-shadow: 0 6px 14px -4px rgba(58,52,46,0.35); }
+
+  .program-card{ transition: transform .18s ease, box-shadow .18s ease; }
+  .program-card:hover{ transform:translateY(-3px); }
+
+  .tab-panel{ display:none; }
+  .tab-panel.active{ display:block; }
+
+  .accordion-btn{ transition: background-color .15s ease; }
+  .accordion-content{ max-height:0; overflow:hidden; transition:max-height .25s ease; }
+  .accordion-content.open{ max-height:2000px; }
+  .accordion-arrow{ transition: transform .2s ease; display:inline-block; }
+  .accordion-arrow.open{ transform: rotate(45deg); }
+
+  .blob{ position:absolute; border-radius:50%; filter:blur(40px); opacity:.55; z-index:0; }
+  .stat-card{ transition: transform .15s ease, box-shadow .15s ease; }
+  .stat-card:hover{ transform:translateY(-2px); }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-[#F0E6D2]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <img src="./brand_logo/logo.png" alt="광주계림초등학교 로고" class="h-10 w-auto" onerror="this.remove(); document.getElementById('logoFallback').classList.remove('hidden')">
+      <span id="logoFallback" class="hidden text-2xl">🏫</span>
+      <span class="font-display font-bold text-base sm:text-xl text-[var(--mint-dark)]">광주계림초등학교 늘봄학교</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-2">
+      <a href="#programs" class="navpill rounded-full px-4 py-2">프로그램</a>
+      <a href="#howto" class="navpill rounded-full px-4 py-2">신청방법</a>
+      <a href="#faq" class="navpill rounded-full px-4 py-2">FAQ</a>
+      <a href="#contact" class="navpill rounded-full px-4 py-2">문의</a>
+    </nav>
+    <a href="https://gyelim.gen.es.kr:451/c2zAfter/" target="_blank" rel="noopener"
+       class="btn-cta hidden sm:inline-flex items-center rounded-full font-bold px-5 py-2.5 shadow-soft-yellow text-sm">
+      수강신청 바로가기
+    </a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="blob w-72 h-72 bg-[var(--mint)] -top-10 -left-16"></div>
+  <div class="blob w-72 h-72 bg-[var(--peach)] top-10 right-0"></div>
+  <div class="blob w-56 h-56 bg-[var(--yellow)] bottom-0 left-1/3"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-14 text-center">
+    <span class="inline-block bg-[var(--coral-tint)] text-[var(--coral-dark)] font-bold text-sm px-4 py-1.5 rounded-full mb-4">
+      ⏰ 잔여자리 선착순 신청
+    </span>
+    <h1 class="font-display font-extrabold text-3xl sm:text-5xl leading-tight text-[var(--ink)]">
+      2026년 7월<br class="sm:hidden"> 늘봄학교 프로그램 안내
+    </h1>
+    <p class="mt-4 text-base sm:text-lg text-[var(--ink-soft)]">
+      함께함이 행복입니다 ♥ 창의융합형 미래인재 육성, 광주계림초등학교 늘봄학교
+    </p>
+
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
+      <div class="bg-white rounded-2xl p-4 shadow-card">
+        <p class="text-xs font-bold text-[var(--mint-dark)] mb-1">📅 신청기간</p>
+        <p class="text-sm font-bold">2026.6.18(목) 10:00<br>~ 6.20(토) 23:00</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-card">
+        <p class="text-xs font-bold text-[var(--coral-dark)] mb-1">💳 스쿨뱅킹</p>
+        <p class="text-sm font-bold">2026.7.20(월)<br>~ 7.24(금)</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-card">
+        <p class="text-xs font-bold text-[var(--orange-dark)] mb-1">🏖️ 늘봄 여름방학</p>
+        <p class="text-sm font-bold">7.27(월) ~ 7.31(금)<br>늘봄학교 휴강</p>
+      </div>
+    </div>
+
+    <p class="mt-4 text-xs text-[var(--ink-soft)]">
+      수강기간 2026년 6월~8월(3개월 단위 신청) · 6월 수강생은 7월로 자동 연장(대기자 이월 안 됨)
+    </p>
+
+    <a href="https://gyelim.gen.es.kr:451/c2zAfter/" target="_blank" rel="noopener"
+       class="btn-cta mt-8 inline-flex items-center gap-2 rounded-full font-bold px-8 py-4 shadow-soft-yellow text-base">
+      지금 바로 수강신청 하러가기 →
+    </a>
+  </div>
+</section>
+
+<!-- Category Tabs -->
+<section id="programs" class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+  <h2 class="font-display font-bold text-2xl sm:text-3xl text-center mb-2">프로그램 한눈에 보기</h2>
+  <p class="text-center text-[var(--ink-soft)] text-sm mb-8">카테고리를 선택해서 원하는 프로그램을 확인하세요</p>
+
+  <div id="tabButtons" class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+    <button data-tab="morning" data-color="sky" class="tab-btn active bg-[var(--sky-tint)] font-bold text-sm sm:text-base px-4 sm:px-5 py-2.5 rounded-full">🌅 아침 늘봄</button>
+    <button data-tab="afterschool" data-color="mint" class="tab-btn bg-[var(--mint-tint)] font-bold text-sm sm:text-base px-4 sm:px-5 py-2.5 rounded-full">📚 방과후 교육</button>
+    <button data-tab="aisw" data-color="lav" class="tab-btn bg-[var(--lav-tint)] font-bold text-sm sm:text-base px-4 sm:px-5 py-2.5 rounded-full">🤖 AI·SW 꿈나무</button>
+    <button data-tab="custom" data-color="peach" class="tab-btn bg-[var(--peach-tint)] font-bold text-sm sm:text-base px-4 sm:px-5 py-2.5 rounded-full">🎈 맞춤형 교육(1,2학년)</button>
+    <button data-tab="care" data-color="orange" class="tab-btn bg-[var(--orange-tint)] font-bold text-sm sm:text-base px-4 sm:px-5 py-2.5 rounded-full">🏡 초등돌봄교실</button>
+  </div>
+
+  <div id="tab-morning" class="tab-panel active">
+    <p class="text-center text-sm text-[var(--ink-soft)] mb-6">전체 학년 대상 · 등교 전 8:00~8:40 운영</p>
+    <div id="grid-morning" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+  </div>
+
+  <div id="tab-afterschool" class="tab-panel">
+    <p class="text-center text-sm text-[var(--ink-soft)] mb-6">전체 학년 대상 · 하교시간 기준 신청 가능 학년이 다르니 확인해주세요</p>
+    <div id="grid-afterschool" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  </div>
+
+  <div id="tab-aisw" class="tab-panel">
+    <p class="text-center text-sm text-[var(--ink-soft)] mb-6">
+      빛고을 6개 대학 연계 · 전체 학년 대상 · <span class="font-bold text-[var(--lav-dark)]">전 강좌 무료</span><br>
+      ※ 2시간 연강 수업으로 1부·2부 함께 신청됩니다(따로 신청 불가) · 대학교 사정에 따라 학기 중 종료될 수 있습니다
+    </p>
+    <div id="grid-aisw" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  </div>
+
+  <div id="tab-custom" class="tab-panel">
+    <p class="text-center text-sm text-[var(--ink-soft)] mb-6">1, 2학년 대상 · <span class="font-bold text-[var(--peach-dark)]">전 강좌 무료</span></p>
+    <div id="grid-custom" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  </div>
+
+  <div id="tab-care" class="tab-panel">
+    <p class="text-center text-sm text-[var(--ink-soft)] mb-6">전체 학년 대상 · 1, 2학년 우선 선정 · <span class="font-bold text-[var(--orange-dark)]">무료</span></p>
+    <div class="bg-white rounded-2xl shadow-card p-5 sm:p-6 mb-6">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="font-display font-bold text-lg">초등돌봄교실</span>
+        <span class="bg-[var(--orange-tint)] text-[var(--orange-dark)] text-xs font-bold px-3 py-1 rounded-full">돌봄전담사 운영</span>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-3 text-sm mb-4">
+        <div class="bg-[var(--orange-tint)]/60 rounded-xl p-3">
+          <p class="font-bold mb-1">월, 금 (50분)</p>
+          <p>1부 13:20~14:10 (1,2학년)</p>
+          <p>2부 14:20~15:10 (1~4학년)</p>
+          <p>3부 15:20~16:10 (1~6학년)</p>
+          <p>4부 16:20~16:50 (1~6학년)</p>
+        </div>
+        <div class="bg-[var(--orange-tint)]/60 rounded-xl p-3">
+          <p class="font-bold mb-1">수 (50분)</p>
+          <p>1부 14:00~14:50 (1,2학년)</p>
+          <p>2부 15:00~15:50 (1~6학년)</p>
+          <p>3부 16:00~16:50 (1~6학년)</p>
+        </div>
+        <div class="bg-[var(--orange-tint)]/60 rounded-xl p-3">
+          <p class="font-bold mb-1">화, 목 (50분)</p>
+          <p>1부 14:00~14:50 (1,2학년)</p>
+          <p>2부 15:00~15:50 (1~6학년)</p>
+          <p>3부 16:00~16:50 (1~6학년)</p>
+        </div>
+      </div>
+      <p class="text-xs text-[var(--ink-soft)]">장소: 돌봄교실 1실~5실 · 문의: 1실 220-2871 · 2실 220-2872 · 3실 220-2873 · 4실 220-2874 · 5실 220-2875</p>
+      <p class="text-xs text-[var(--ink-soft)] mt-1">※ 선착순 신청은 아니며, 경합이 있을 경우 수용가능인원에 따라 우선순위로 배정됩니다. (잔여자리는 선착순)</p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-card p-5 sm:p-6">
+      <p class="font-display font-bold mb-3">경합 시 우선순위 (1~2학년 우선 선정)</p>
+      <ol class="space-y-2 text-sm">
+        <li class="flex gap-2"><span class="font-bold text-[var(--orange-dark)]">1</span> 1학년 학생 중 근로 중인 ① 한부모 ② 지원대상자 ③ 맞벌이 가정의 자녀</li>
+        <li class="flex gap-2"><span class="font-bold text-[var(--orange-dark)]">2</span> 1학년 학생 중 일반 가정의 자녀 (동순위는 생년월일 늦은 순)</li>
+        <li class="flex gap-2"><span class="font-bold text-[var(--orange-dark)]">3</span> 2학년 학생 중 근로 중인 ① 한부모 ② 지원대상자 ③ 맞벌이 가정의 자녀</li>
+        <li class="flex gap-2"><span class="font-bold text-[var(--orange-dark)]">4</span> 2학년 학생 중 일반 가정의 자녀 (동순위는 생년월일 늦은 순)</li>
+        <li class="flex gap-2"><span class="font-bold text-[var(--orange-dark)]">5</span> 3~6학년 학생 중 생년월일 늦은 순</li>
+      </ol>
+      <p class="text-xs text-[var(--ink-soft)] mt-3">※ 돌봄 반편성 결과는 개별 연락드립니다. 경합이 있을 경우 증빙서류를 요구할 수 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 신청방법 안내 -->
+<section id="howto" class="bg-white py-12 border-y border-[#F0E6D2]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <h2 class="font-display font-bold text-2xl sm:text-3xl text-center mb-2">수강신청 방법 안내</h2>
+    <p class="text-center text-[var(--ink-soft)] text-sm mb-8">학교 홈페이지에 회원가입이나 로그인 없이 바로 신청 가능합니다</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div class="bg-[var(--mint-tint)] rounded-2xl p-5">
+        <p class="font-display font-bold text-[var(--mint-dark)] mb-2">STEP 1</p>
+        <p class="text-sm">광주계림초 홈페이지 접속 후 <span class="font-bold">‘늘봄학교 수강신청’</span> 클릭</p>
+      </div>
+      <div class="bg-[var(--sky-tint)] rounded-2xl p-5">
+        <p class="font-display font-bold text-[var(--sky-dark)] mb-2">STEP 2</p>
+        <p class="text-sm">학년·반·번호·이름·비밀번호로 로그인 <span class="block text-xs mt-1 text-[var(--ink-soft)]">초기 비밀번호: 1234</span></p>
+      </div>
+      <div class="bg-[var(--yellow-tint)] rounded-2xl p-5">
+        <p class="font-display font-bold text-[var(--yellow-dark)] mb-2">STEP 3</p>
+        <p class="text-sm">왼쪽 상단 <span class="font-bold">‘수강신청’</span> 클릭 후 희망 강좌 선택, 학부모 정보 입력</p>
+      </div>
+      <div class="bg-[var(--coral-tint)] rounded-2xl p-5">
+        <p class="font-display font-bold text-[var(--coral-dark)] mb-2">STEP 4</p>
+        <p class="text-sm"><span class="font-bold">‘신청하기’</span> 클릭하면 신청 완료! 정원 마감 시 대기신청 가능</p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="https://gyelim.gen.es.kr:451/c2zAfter/" target="_blank" rel="noopener"
+         class="btn-cta inline-flex items-center gap-2 rounded-full font-bold px-8 py-4 shadow-soft-yellow text-base">
+        수강신청 페이지 바로가기 →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Overview 통계 -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 py-14 text-center">
+  <p class="kicker mb-3">Overview</p>
+  <h2 class="font-display font-bold text-2xl sm:text-3xl mb-10">2026년 7월, 이렇게 운영됩니다</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
+    <div class="stat-card bg-[var(--mint-tint)] rounded-2xl p-5 shadow-card">
+      <p class="font-display font-extrabold text-2xl sm:text-3xl text-[var(--mint-dark)]">17개</p>
+      <p class="text-xs text-[var(--ink-soft)] mt-1">방과후 교육 강좌</p>
+    </div>
+    <div class="stat-card bg-[var(--lav-tint)] rounded-2xl p-5 shadow-card">
+      <p class="font-display font-extrabold text-2xl sm:text-3xl text-[var(--lav-dark)]">8개</p>
+      <p class="text-xs text-[var(--ink-soft)] mt-1">AI·SW 꿈나무 프로그램 (무료)</p>
+    </div>
+    <div class="stat-card bg-[var(--peach-tint)] rounded-2xl p-5 shadow-card">
+      <p class="font-display font-extrabold text-2xl sm:text-3xl text-[var(--peach-dark)]">3개</p>
+      <p class="text-xs text-[var(--ink-soft)] mt-1">맞춤형 교육 (1,2학년 무료)</p>
+    </div>
+    <div class="stat-card bg-[var(--sky-tint)] rounded-2xl p-5 shadow-card">
+      <p class="font-display font-extrabold text-2xl sm:text-3xl text-[var(--sky-dark)]">주 5일</p>
+      <p class="text-xs text-[var(--ink-soft)] mt-1">아침 늘봄 · 초등돌봄교실 운영</p>
+    </div>
+    <div class="stat-card bg-[var(--yellow-tint)] rounded-2xl p-5 shadow-card">
+      <p class="font-display font-extrabold text-2xl sm:text-3xl text-[var(--yellow-dark)]">30,000원</p>
+      <p class="text-xs text-[var(--ink-soft)] mt-1">대부분 강좌 수강료(플룻·바이올린 35,000원)</p>
+    </div>
+    <div class="stat-card bg-[var(--orange-tint)] rounded-2xl p-5 shadow-card">
+      <p class="font-display font-extrabold text-2xl sm:text-3xl text-[var(--orange-dark)]">선착순</p>
+      <p class="text-xs text-[var(--ink-soft)] mt-1">잔여자리 마감 임박</p>
+    </div>
+  </div>
+</section>
+
+<!-- 주의사항 & 환불규정 -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid lg:grid-cols-2 gap-8">
+  <div>
+    <h2 class="font-display font-bold text-xl sm:text-2xl mb-4">📌 주의사항</h2>
+    <ul class="space-y-2.5 text-sm bg-white rounded-2xl shadow-card p-5">
+      <li class="flex gap-2"><span>•</span>수업 종료 후 다음 이동 장소 및 귀가 방법을 반드시 늘봄 선생님께 안내해주세요.</li>
+      <li class="flex gap-2"><span>•</span>학생의 문제 행위로 타 학생 학습권 침해가 3회 이상 반복될 경우 수강이 제한될 수 있습니다.</li>
+      <li class="flex gap-2"><span>•</span>결석·지각 시 보호자가 미리 연락해야 하며, 무단불참 3회 시 수강이 제한될 수 있습니다.</li>
+      <li class="flex gap-2"><span>•</span>안전관리를 위해 같은 부서를 요일별로 다른 시간에 신청할 수 없습니다. (예: 댄스 월 2부 / 금 1부 신청 불가)</li>
+      <li class="flex gap-2"><span>•</span>학교 내에서 이동하는 늘봄학교 수업만 가능하며, 외부 학원 수강 후 늘봄학교 수업 수강은 불가합니다.</li>
+      <li class="flex gap-2"><span>•</span>각 부서 재료비 및 교재비는 구매·주문 특성상 수강신청기간 이후에는 취소되지 않습니다.</li>
+    </ul>
+  </div>
+
+  <div id="refund">
+    <h2 class="font-display font-bold text-xl sm:text-2xl mb-4">💳 환불 규정</h2>
+    <div class="bg-white rounded-2xl shadow-card p-5 text-sm space-y-3">
+      <div class="bg-[var(--mint-tint)] rounded-xl p-3">
+        <p class="font-bold">학생 의사와 무관하게 수강이 불가능하게 된 경우</p>
+        <p class="text-[var(--ink-soft)] mt-1">이미 납부한 수강료를 일할 계산한 금액 반환 (차후 보강한 경우 반환하지 않을 수 있음)</p>
+      </div>
+      <div class="bg-[var(--coral-tint)] rounded-xl p-3">
+        <p class="font-bold mb-2">학습자 본인 의사로 수강을 포기한 경우</p>
+        <p class="text-[var(--ink-soft)]">※ 강사에게 수강 포기 의사를 밝힌 시점 기준</p>
+        <table class="w-full mt-2 text-xs">
+          <tbody>
+            <tr class="border-t border-white"><td class="py-1.5">수강 개시 이전</td><td class="text-right font-bold">전액 반환</td></tr>
+            <tr class="border-t border-white"><td class="py-1.5">총 수강시간의 1/3 미만</td><td class="text-right font-bold">2/3 해당액 반환</td></tr>
+            <tr class="border-t border-white"><td class="py-1.5">총 수강시간의 1/2 미만</td><td class="text-right font-bold">1/2 해당액 반환</td></tr>
+            <tr class="border-t border-white"><td class="py-1.5">총 수강시간의 1/2 이상</td><td class="text-right font-bold">반환하지 않음</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="bg-white border-y border-[#F0E6D2] py-14">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <p class="kicker text-center mb-3">FAQ</p>
+    <h2 class="font-display font-bold text-2xl sm:text-3xl text-center mb-10">자주 묻는 질문</h2>
+    <div class="max-w-2xl mx-auto space-y-3">
+      <div class="border border-[#F0E6D2] rounded-2xl overflow-hidden">
+        <button class="accordion-btn w-full flex justify-between items-center px-5 py-4 font-bold text-left hover:bg-[var(--mint-tint)]" onclick="toggleAcc(this)">
+          수강신청은 어떻게 하나요?
+          <span class="accordion-arrow text-[var(--mint-dark)] text-xl leading-none">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="px-5 pb-4 text-sm text-[var(--ink-soft)]">학교 홈페이지에서 회원가입 없이 ‘늘봄학교 수강신청’ 메뉴로 바로 신청합니다. 학년·반·번호·이름·비밀번호(초기 1234)로 로그인 후 원하는 강좌를 선택하면 됩니다.</p>
+        </div>
+      </div>
+      <div class="border border-[#F0E6D2] rounded-2xl overflow-hidden">
+        <button class="accordion-btn w-full flex justify-between items-center px-5 py-4 font-bold text-left hover:bg-[var(--mint-tint)]" onclick="toggleAcc(this)">
+          수강료는 얼마인가요?
+          <span class="accordion-arrow text-[var(--mint-dark)] text-xl leading-none">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="px-5 pb-4 text-sm text-[var(--ink-soft)]">아침 늘봄, AI·SW 꿈나무, 맞춤형 교육, 초등돌봄교실은 무료입니다. 방과후 교육은 대부분 30,000원이며, 플룻·바이올린은 35,000원입니다. 강좌별 교재·재료비가 별도로 있을 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="border border-[#F0E6D2] rounded-2xl overflow-hidden">
+        <button class="accordion-btn w-full flex justify-between items-center px-5 py-4 font-bold text-left hover:bg-[var(--mint-tint)]" onclick="toggleAcc(this)">
+          수강취소는 어떻게 하나요?
+          <span class="accordion-arrow text-[var(--mint-dark)] text-xl leading-none">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="px-5 pb-4 text-sm text-[var(--ink-soft)]">신청기간 중에는 ‘나의수강강좌’에서 직접 취소할 수 있습니다. 신청기간 이후에는 부서 선생님 또는 늘봄지원실(062-220-2877)로 연락해주세요.</p>
+        </div>
+      </div>
+      <div class="border border-[#F0E6D2] rounded-2xl overflow-hidden">
+        <button class="accordion-btn w-full flex justify-between items-center px-5 py-4 font-bold text-left hover:bg-[var(--mint-tint)]" onclick="toggleAcc(this)">
+          강사 연락처는 어디서 확인하나요?
+          <span class="accordion-arrow text-[var(--mint-dark)] text-xl leading-none">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="px-5 pb-4 text-sm text-[var(--ink-soft)]">‘나의수강강좌’ 메뉴에서 신청한 강좌의 강사 이름 아래 연락처를 확인할 수 있습니다. 연락처를 공개하지 않은 경우 표시되지 않을 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="border border-[#F0E6D2] rounded-2xl overflow-hidden">
+        <button class="accordion-btn w-full flex justify-between items-center px-5 py-4 font-bold text-left hover:bg-[var(--mint-tint)]" onclick="toggleAcc(this)">
+          정원이 마감되면 어떻게 되나요?
+          <span class="accordion-arrow text-[var(--mint-dark)] text-xl leading-none">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="px-5 pb-4 text-sm text-[var(--ink-soft)]">정원이 마감된 강좌는 대기신청 후 대기자로 접수됩니다. 결원이 생기면 대기자 순서대로 담당 선생님께서 개별 연락드립니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 문의 & CTA -->
+<section id="contact" class="bg-[var(--mint-dark)] text-white py-12">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <h2 class="font-display font-bold text-2xl sm:text-3xl mb-3">궁금한 점이 있으신가요?</h2>
+    <p class="text-white/90 mb-6 text-sm sm:text-base">방과후 및 맞춤형 교육, 초등돌봄교실 관련 문의는 아래로 연락해주세요</p>
+    <div class="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-8">
+      <a href="tel:062-220-2877" class="btn-ghost bg-white rounded-2xl p-4 block">
+        <p class="text-xs font-bold text-[var(--mint-dark)]">☎ 방과후·맞춤형 교육 문의</p>
+        <p class="font-display font-bold text-lg text-[var(--ink)]">늘봄지원실 062-220-2877</p>
+      </a>
+      <a href="tel:062-220-2874" class="btn-ghost bg-white rounded-2xl p-4 block">
+        <p class="text-xs font-bold text-[var(--mint-dark)]">☎ 초등돌봄교실 문의</p>
+        <p class="font-display font-bold text-lg text-[var(--ink)]">돌봄교실 062-220-2874</p>
+      </a>
+    </div>
+    <a href="https://gyelim.gen.es.kr:451/c2zAfter/" target="_blank" rel="noopener"
+       class="btn-cta inline-flex items-center gap-2 rounded-full font-bold px-8 py-4 shadow-soft-yellow text-base">
+      지금 바로 수강신청 하러가기 →
+    </a>
+  </div>
+</section>
+
+<!-- 문의사항 남기기 -->
+<section id="inquiry" class="max-w-3xl mx-auto px-4 sm:px-6 py-14">
+  <h2 class="font-display font-bold text-2xl sm:text-3xl text-center mb-2">문의사항 남기기</h2>
+  <p class="text-center text-sm text-[var(--ink-soft)] mb-8">전화 연결이 어려우시다면 아래에 남겨주세요. 확인 후 순차적으로 연락드립니다.</p>
+  <form id="inquiryForm" class="bg-white rounded-2xl shadow-card p-6 sm:p-8 space-y-4">
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div>
+        <label class="text-sm font-bold block mb-1.5" for="inquiry-name">이름 *</label>
+        <input id="inquiry-name" name="name" type="text" required
+               class="w-full rounded-xl border border-[#E4DCC8] px-4 py-2.5 text-sm transition-shadow focus:outline-none focus:ring-2 focus:ring-[var(--mint)]"
+               placeholder="학부모 성함">
+      </div>
+      <div>
+        <label class="text-sm font-bold block mb-1.5" for="inquiry-phone">연락처 *</label>
+        <input id="inquiry-phone" name="phone" type="tel" required
+               class="w-full rounded-xl border border-[#E4DCC8] px-4 py-2.5 text-sm transition-shadow focus:outline-none focus:ring-2 focus:ring-[var(--mint)]"
+               placeholder="010-0000-0000">
+      </div>
+    </div>
+    <div>
+      <label class="text-sm font-bold block mb-1.5" for="inquiry-grade">자녀 학년·반 이름</label>
+      <input id="inquiry-grade" name="grade_class" type="text"
+             class="w-full rounded-xl border border-[#E4DCC8] px-4 py-2.5 text-sm transition-shadow focus:outline-none focus:ring-2 focus:ring-[var(--mint)]"
+             placeholder="예: 2학년 3반 홍길동">
+    </div>
+    <div>
+      <label class="text-sm font-bold block mb-1.5" for="inquiry-message">문의내용 *</label>
+      <textarea id="inquiry-message" name="message" required rows="4"
+                class="w-full rounded-xl border border-[#E4DCC8] px-4 py-2.5 text-sm transition-shadow focus:outline-none focus:ring-2 focus:ring-[var(--mint)]"
+                placeholder="궁금하신 점을 남겨주세요"></textarea>
+    </div>
+    <button type="submit" id="inquirySubmitBtn" class="btn-cta w-full rounded-full font-bold px-8 py-3.5 shadow-soft-yellow text-base">
+      문의 남기기
+    </button>
+    <p id="inquiryStatus" class="text-sm text-center hidden"></p>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-10 text-sm">
+    <div>
+      <p class="kicker mb-3">프로그램</p>
+      <ul class="space-y-2 text-[var(--ink-soft)]">
+        <li><a href="#programs" class="hover:text-[var(--mint-dark)]">아침 늘봄</a></li>
+        <li><a href="#programs" class="hover:text-[var(--mint-dark)]">방과후 교육</a></li>
+        <li><a href="#programs" class="hover:text-[var(--mint-dark)]">AI·SW 꿈나무</a></li>
+        <li><a href="#programs" class="hover:text-[var(--mint-dark)]">초등돌봄교실</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="kicker mb-3">안내</p>
+      <ul class="space-y-2 text-[var(--ink-soft)]">
+        <li><a href="#howto" class="hover:text-[var(--mint-dark)]">신청방법</a></li>
+        <li><a href="#refund" class="hover:text-[var(--mint-dark)]">환불규정</a></li>
+        <li><a href="#faq" class="hover:text-[var(--mint-dark)]">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="kicker mb-3">문의</p>
+      <ul class="space-y-2 text-[var(--ink-soft)]">
+        <li>늘봄지원실 062-220-2877</li>
+        <li>돌봄교실 062-220-2874</li>
+      </ul>
+    </div>
+    <div>
+      <p class="kicker mb-3">학교정보</p>
+      <ul class="space-y-2 text-[var(--ink-soft)]">
+        <li class="font-bold text-[var(--ink)]">광주계림초등학교</li>
+        <li>(61412) 광주광역시 동구 중앙로320</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pt-6 border-t border-[#F0E6D2] text-xs text-[var(--ink-soft)] text-center">
+    ※ 학교 공사 등으로 인하여 늘봄학교 운영 상황이 변경될 수 있습니다.
+  </div>
+</footer>
+
+<script>
+function toggleAcc(btn){
+  const content = btn.nextElementSibling;
+  const arrow = btn.querySelector('.accordion-arrow');
+  content.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+
+const colorMap = {
+  sky:   {tint:'var(--sky-tint)',   dark:'var(--sky-dark)',   bg:'var(--sky)'},
+  mint:  {tint:'var(--mint-tint)',  dark:'var(--mint-dark)',  bg:'var(--mint)'},
+  lav:   {tint:'var(--lav-tint)',   dark:'var(--lav-dark)',   bg:'var(--lav)'},
+  peach: {tint:'var(--peach-tint)', dark:'var(--peach-dark)', bg:'var(--peach)'},
+  orange:{tint:'var(--orange-tint)',dark:'var(--orange-dark)',bg:'var(--orange)'}
+};
+
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const target = btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b=>{
+      b.classList.remove('active');
+      b.style.backgroundColor = '';
+    });
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    const c = colorMap[btn.dataset.color];
+    btn.style.backgroundColor = c.dark;
+    document.getElementById('tab-'+target).classList.add('active');
+  });
+});
+// init active tab color
+(function(){
+  const first = document.querySelector('.tab-btn.active');
+  first.style.backgroundColor = colorMap[first.dataset.color].dark;
+})();
+
+function badge(text, color){
+  return `<span class="text-[11px] font-bold px-2 py-0.5 rounded-full" style="background:${colorMap[color].tint}; color:${colorMap[color].dark}">${text}</span>`;
+}
+
+function renderCard(p, color){
+  const c = colorMap[color];
+  const timesHtml = p.times.map(t=>`<p class="text-xs text-[var(--ink-soft)]">${t}</p>`).join('');
+  const feeHtml = p.material
+    ? `<p class="text-xs text-[var(--ink-soft)] mt-0.5">교재/재료비 ${p.material}</p>` : '';
+  const teacherHtml = p.teacher
+    ? `<p class="text-xs text-[var(--ink-soft)] mt-2">👤 ${p.teacher}${p.phone ? ' · '+p.phone : ''}</p>` : '';
+  return `
+  <div class="program-card bg-white rounded-2xl shadow-card p-5" style="border-top:4px solid ${c.bg}">
+    <div class="flex items-start justify-between gap-2 mb-2">
+      <h3 class="font-display font-bold text-base">${p.name}</h3>
+      <span class="shrink-0 text-xs font-bold px-2.5 py-1 rounded-full" style="background:${c.tint};color:${c.dark}">${p.fee}</span>
+    </div>
+    ${feeHtml}
+    <p class="text-xs text-[var(--ink-soft)] mt-2">📍 ${p.place}</p>
+    <div class="mt-2 flex flex-wrap gap-1">${p.days.map(d=>badge(d,color)).join('')}</div>
+    <div class="mt-2 space-y-0.5">${timesHtml}</div>
+    ${teacherHtml}
+  </div>`;
+}
+
+// 아침 늘봄
+const morningPrograms = [
+  {name:'독서 돌봄', fee:'무료', place:'1층 돌봄교실 5실,6실', days:['월~금'], times:['8:00~8:40 (1~6학년)'], teacher:'자원봉사자'},
+  {name:'스포츠스태킹', fee:'무료', place:'3층 창작꿈터', days:['월~금'], times:['8:00~8:40 (1~6학년)','월,화 김태용 · 수 김형섭 · 목,금 정인걸']},
+];
+document.getElementById('grid-morning').innerHTML = morningPrograms.map(p=>renderCard(p,'sky')).join('');
+
+// 방과후 교육 프로그램
+const mfPattern = ['월,금','1부 13:20~14:10 (1,2학년)','2부 14:20~15:10 (1~4학년)','3부 15:20~16:10 (1~6학년)'];
+const hmPattern = ['화,목','1부 14:00~14:50 (1,2학년)','2부 15:00~15:50 (1~4학년)','3부 16:00~16:50 (1~6학년)'];
+function withDays(daysAndTimes, extra){ return {days:[daysAndTimes[0]], times:daysAndTimes.slice(1).concat(extra||[])}; }
+
+const afterschoolPrograms = [
+  {name:'놀이체육', teacher:'이라임', phone:'010-5177-5866', fee:'15,000원', material:'없음', place:'1층 꿈자람 놀이터1', days:['수'], times:['1부 14:00~14:50 (1,2학년)','2부 15:00~15:50 (1~6학년)']},
+  {name:'댄스', teacher:'김가은', phone:'010-2260-7278', fee:'30,000원', material:'없음', place:'1층 꿈자람 놀이터1', ...withDays(mfPattern)},
+  {name:'독서토론', teacher:'진주', phone:'010-3614-0080', fee:'30,000원', material:'9,000원(3개월)', place:'1층 창의꿈터2', ...withDays(mfPattern)},
+  {name:'로봇과학', teacher:'오선희', phone:'010-3644-5330', fee:'30,000원', material:'85,000원~(3개월 이상 사용)', place:'1층 창의꿈터1', ...withDays(mfPattern)},
+  {name:'바둑', teacher:'이성재', phone:'010-7705-7700', fee:'30,000원', material:'13,000원(1~3개월)', place:'3층 온누리꿈터', ...withDays(mfPattern)},
+  {name:'바이올린', teacher:'김사라', phone:'010-4180-5846', fee:'35,000원', material:'없음(개인 준비)', place:'4층 소리꿈터', ...withDays(mfPattern)},
+  {name:'주산암산', teacher:'배은주', phone:'010-7610-0292', fee:'30,000원', material:'교재 7,000~10,000원 · 주판 13,000원', place:'1층 창의꿈터3', ...withDays(mfPattern)},
+  {name:'클레이공예', teacher:'정혜원', phone:'010-4659-1979', fee:'30,000원', material:'18,000원(1개월)', place:'3층 창작꿈터', ...withDays(mfPattern)},
+  {name:'논리수학(플레이팩토)', teacher:'임경아', phone:'010-6692-8210', fee:'30,000원', material:'교재 9,000~17,100원(교구비 없음)', place:'1층 창의꿈터2', ...withDays(hmPattern)},
+  {name:'미술', teacher:'김나은', phone:'010-9635-1050', fee:'30,000원', material:'5,000원(1개월)', place:'3층 창작꿈터', ...withDays(hmPattern)},
+  {name:'배드민턴', teacher:'이명하', phone:'010-7225-6839', fee:'30,000원', material:'없음', place:'1층 건강꿈터(학교 강당)', ...withDays(hmPattern)},
+  {name:'생명과학', teacher:'이혜원', phone:'010-3295-6416', fee:'30,000원', material:'16,000원(1개월)', place:'1층 창의꿈터1', ...withDays(hmPattern)},
+  {name:'영어회화', teacher:'유선애', phone:'010-7517-0074', fee:'30,000원', material:'12,600~18,900원', place:'3층 온누리꿈터', ...withDays(hmPattern)},
+  {name:'음악줄넘기', teacher:'김주영', phone:'010-2785-8225', fee:'30,000원', material:'없음', place:'1층 꿈자람 놀이터1', ...withDays(hmPattern)},
+  {name:'플룻', teacher:'이유승', phone:'010-4620-2606', fee:'35,000원', material:'없음(악기 선착순 대여)', place:'4층 소리꿈터', ...withDays(hmPattern)},
+  {name:'한자', teacher:'이미아', phone:'010-3545-8716', fee:'30,000원', material:'5,500~23,000원', place:'3층 스포츠클럽실(지혜관)', ...withDays(hmPattern)},
+  {name:'컴퓨터', teacher:'김소정', phone:'010-8934-0454', fee:'주2회 22,000원 / 주4회 44,000원', material:'12,000~21,000원', place:'2층 컴퓨터실2', days:['월,금','수','화,목'], times:['월,금 1부 13:20~14:10 컴기초(1,2학년) · 2부/3부 타자집중·자격증(1~6학년)','수 14:00~15:50 2시간 연강 타자집중/AI코딩/자격증(1~6학년)','화,목 1부 한글기초(1,2학년) · 2부 자격증(3~6학년)']},
+];
+document.getElementById('grid-afterschool').innerHTML = afterschoolPrograms.map(p=>renderCard(p,'mint')).join('');
+document.getElementById('grid-afterschool').insertAdjacentHTML('beforeend', `
+  <div class="program-card bg-white rounded-2xl shadow-card p-5 sm:col-span-2 lg:col-span-3" style="border-top:4px dashed var(--mint)">
+    <p class="text-xs text-[var(--ink-soft)]">※ 위 시간표는 안내장 기준이며, 실제 배정 시간은 학교 늘봄학교 수강신청 시스템에서 다시 한 번 확인해주세요.</p>
+  </div>`);
+
+// AI·SW 꿈나무 교실
+const aiswPrograms = [
+  {name:'AI 음악코딩', teacher:'양영주', phone:'010-9474-2830', fee:'무료', place:'1층 돌봄교실6(AI전용교실)', days:['월'], times:['1부 13:20~14:10 (1,2학년)','2부 14:20~15:10 (1,2학년)']},
+  {name:'생각이 자라는 AI정원', teacher:'김용인', phone:'010-2005-9118', fee:'무료', place:'1층 돌봄교실6(AI전용교실)', days:['화'], times:['1부 14:00~14:50 (1,2학년)','2부 15:00~15:50 (1,2학년)']},
+  {name:'몸으로 하는 코딩운동회', teacher:'정수연', phone:'010-8543-3080', fee:'무료', place:'1층 돌봄교실6(AI전용교실)', days:['수'], times:['1부 14:00~14:50 (1,2학년)','2부 15:00~15:50 (1,2학년)']},
+  {name:'3D펜 놀이터', teacher:'이진숙', phone:'010-7921-4860', fee:'무료', place:'1층 창의꿈터1', days:['수'], times:['1부 14:00~14:50 (1,2학년)','2부 15:00~15:50 (1,2학년)']},
+  {name:'컵스택 놀이터', teacher:'박영임', phone:'010-4628-5453', fee:'무료', place:'1층 창의꿈터2', days:['수'], times:['1부 14:00~14:50 (1,2학년)','2부 15:00~15:50 (1,2학년)']},
+  {name:'앱인벤터로 배우는 모바일 앱개발', teacher:'조규인', phone:'010-8732-0764', fee:'무료', place:'1층 창의꿈터3', days:['수'], times:['1부 14:00~14:50 (5,6학년)','2부 15:00~15:50 (5,6학년)']},
+  {name:'미션클리어-상상으로 코딩하라', teacher:'심주연', phone:'010-4202-8702', fee:'무료', place:'1층 돌봄교실6(AI전용교실)', days:['목'], times:['1부 14:00~14:50 (3,4학년)','2부 15:00~15:50 (3,4학년)']},
+  {name:'AI 놀이교실', teacher:'김미라', phone:'010-9292-6428', fee:'무료', place:'1층 돌봄교실6(AI전용교실)', days:['금'], times:['1부 13:20~14:10 (1,2학년)','2부 14:20~15:10 (1,2학년)']},
+];
+document.getElementById('grid-aisw').innerHTML = aiswPrograms.map(p=>renderCard(p,'lav')).join('');
+
+// 맞춤형 교육 프로그램 (1,2학년)
+const customTimes = ['월,금 1부 13:20~14:10 · 2부 14:20~15:10','수 1부 14:00~14:50 · 2부 15:00~15:50','화,목 1부 14:00~14:50 · 2부 15:00~15:50'];
+const customPrograms = [
+  {name:'전래놀이', teacher:'박윤경', phone:'010-9475-0450', fee:'무료', place:'1층 돌봄교실5', days:['월~금'], times:customTimes},
+  {name:'보드게임', teacher:'송미란', phone:'010-3567-6210', fee:'무료', place:'1층 돌봄교실4', days:['월~금'], times:customTimes},
+  {name:'종이접기', teacher:'강은옥', phone:'010-3633-9188', fee:'무료', place:'2층 늘봄교실(1-3반과 1-4반 사이)', days:['월~금'], times:customTimes},
+];
+document.getElementById('grid-custom').innerHTML = customPrograms.map(p=>renderCard(p,'peach')).join('');
+</script>
+
+<script type="module">
+  const SUPABASE_URL = 'https://gmjfrdcjalzqtesmmxry.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_wN5pEPsGFwbU6t_lwBDMOg_2QLceGdL';
+
+  const form = document.getElementById('inquiryForm');
+  const statusEl = document.getElementById('inquiryStatus');
+  const submitBtn = document.getElementById('inquirySubmitBtn');
+
+  const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  function showStatus(message, isError){
+    statusEl.textContent = message;
+    statusEl.className = 'text-sm text-center font-bold mt-2 ' + (isError ? 'text-[var(--coral-dark)]' : 'text-[var(--mint-dark)]');
+    statusEl.classList.remove('hidden');
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = '접수 중...';
+
+    const formData = new FormData(form);
+    const { error } = await supabase.from('inquiries').insert({
+      name: formData.get('name'),
+      phone: formData.get('phone'),
+      grade_class: formData.get('grade_class'),
+      message: formData.get('message'),
+    });
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = '문의 남기기';
+
+    if (error) {
+      showStatus('문의 접수 중 오류가 발생했습니다. 전화로 문의해주세요.', true);
+      return;
+    }
+    form.reset();
+    showStatus('문의가 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.', false);
+  });
+</script>
+</body>
+</html>

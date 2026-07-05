@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>관리자 | 광주계림초 늘봄학교</title>
+<meta name="robots" content="noindex, nofollow">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mint:#7FD1BE; --mint-dark:#3E9C86; --mint-tint:#E7F8F4;
+    --coral:#FF9E9E; --coral-dark:#E5696F; --coral-tint:#FFEDEE;
+    --orange-dark:#E58F3D; --orange-tint:#FFF2E2;
+    --ink:#3A342E; --ink-soft:#6B6259; --cream:#FFFBF3;
+  }
+  *{ box-sizing:border-box; }
+  body{ font-family:'Noto Sans KR', sans-serif; background:var(--cream); color:var(--ink); }
+  .font-display{ font-family:'Baloo 2', 'Noto Sans KR', sans-serif; }
+  .shadow-card{ box-shadow: 0 2px 10px -2px rgba(58,52,46,0.10), 0 1px 3px -1px rgba(58,52,46,0.08); }
+
+  .btn-cta{ background:var(--mint-dark); color:#fff; transition: transform .15s ease, background-color .15s ease; }
+  .btn-cta:hover{ background:#347F6D; transform:scale(1.02); }
+  .btn-cta:focus{ outline:none; box-shadow:0 0 0 4px rgba(62,156,134,0.3); }
+  .btn-cta:active{ transform:scale(0.97); }
+  .btn-cta:disabled{ opacity:.5; cursor:not-allowed; }
+
+  .btn-ghost{ background:#fff; color:var(--mint-dark); border:2px solid var(--mint); transition: transform .15s ease, background-color .15s ease; }
+  .btn-ghost:hover{ background:var(--mint-tint); transform:scale(1.02); }
+  .btn-ghost:focus{ outline:none; box-shadow:0 0 0 4px rgba(127,209,190,0.35); }
+  .btn-ghost:active{ transform:scale(0.97); }
+
+  .status-select{ transition: background-color .15s ease; }
+  .status-select:focus{ outline:none; box-shadow:0 0 0 3px rgba(127,209,190,0.4); }
+
+  .hidden{ display:none !important; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- 로그인 화면 -->
+<div id="loginView" class="min-h-screen flex items-center justify-center px-4">
+  <div class="w-full max-w-sm bg-white rounded-2xl shadow-card p-8">
+    <p class="font-display font-bold text-xl text-center mb-1">🏫 관리자 로그인</p>
+    <p class="text-center text-sm text-[var(--ink-soft)] mb-6">광주계림초 늘봄학교 문의 관리</p>
+    <form id="loginForm" class="space-y-3">
+      <div>
+        <label class="text-sm font-bold block mb-1.5" for="login-email">이메일</label>
+        <input id="login-email" type="email" required autocomplete="username"
+               class="w-full rounded-xl border border-[#E4DCC8] px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--mint)]">
+      </div>
+      <div>
+        <label class="text-sm font-bold block mb-1.5" for="login-password">비밀번호</label>
+        <input id="login-password" type="password" required autocomplete="current-password"
+               class="w-full rounded-xl border border-[#E4DCC8] px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--mint)]">
+      </div>
+      <button type="submit" id="loginBtn" class="btn-cta w-full rounded-full font-bold px-6 py-3 text-sm">로그인</button>
+      <p id="loginError" class="text-sm text-center text-[var(--coral-dark)] font-bold hidden"></p>
+    </form>
+  </div>
+</div>
+
+<!-- 대시보드 화면 -->
+<div id="dashboardView" class="hidden">
+  <header class="sticky top-0 z-10 bg-white/90 backdrop-blur border-b border-[#F0E6D2]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
+      <span class="font-display font-bold text-base sm:text-lg text-[var(--mint-dark)]">🏫 늘봄학교 문의 관리</span>
+      <button id="logoutBtn" class="btn-ghost rounded-full font-bold px-4 py-2 text-sm">로그아웃</button>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+    <div class="grid grid-cols-3 gap-3 sm:gap-4 mb-8">
+      <div class="bg-white rounded-2xl shadow-card p-4 sm:p-5">
+        <p class="font-display font-extrabold text-xl sm:text-2xl" id="statTotal">-</p>
+        <p class="text-xs text-[var(--ink-soft)] mt-1">전체 문의</p>
+      </div>
+      <div class="bg-[var(--orange-tint)] rounded-2xl shadow-card p-4 sm:p-5">
+        <p class="font-display font-extrabold text-xl sm:text-2xl text-[var(--orange-dark)]" id="statPending">-</p>
+        <p class="text-xs text-[var(--ink-soft)] mt-1">대기중</p>
+      </div>
+      <div class="bg-[var(--mint-tint)] rounded-2xl shadow-card p-4 sm:p-5">
+        <p class="font-display font-extrabold text-xl sm:text-2xl text-[var(--mint-dark)]" id="statToday">-</p>
+        <p class="text-xs text-[var(--ink-soft)] mt-1">오늘 접수</p>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="font-display font-bold text-lg sm:text-xl">문의 목록</h2>
+      <button id="refreshBtn" class="btn-ghost rounded-full font-bold px-4 py-2 text-xs sm:text-sm">새로고침</button>
+    </div>
+
+    <div id="listEmpty" class="hidden bg-white rounded-2xl shadow-card p-8 text-center text-[var(--ink-soft)] text-sm">
+      아직 접수된 문의가 없습니다.
+    </div>
+
+    <div id="inquiryList" class="space-y-3"></div>
+  </main>
+</div>
+
+<script type="module">
+  const SUPABASE_URL = 'https://gmjfrdcjalzqtesmmxry.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_wN5pEPsGFwbU6t_lwBDMOg_2QLceGdL';
+
+  const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const loginView = document.getElementById('loginView');
+  const dashboardView = document.getElementById('dashboardView');
+  const loginForm = document.getElementById('loginForm');
+  const loginBtn = document.getElementById('loginBtn');
+  const loginError = document.getElementById('loginError');
+  const logoutBtn = document.getElementById('logoutBtn');
+  const refreshBtn = document.getElementById('refreshBtn');
+  const inquiryList = document.getElementById('inquiryList');
+  const listEmpty = document.getElementById('listEmpty');
+
+  function showDashboard(){
+    loginView.classList.add('hidden');
+    dashboardView.classList.remove('hidden');
+    loadInquiries();
+  }
+  function showLogin(){
+    dashboardView.classList.add('hidden');
+    loginView.classList.remove('hidden');
+  }
+
+  const { data: { session } } = await supabase.auth.getSession();
+  if (session) showDashboard(); else showLogin();
+
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (session) showDashboard(); else showLogin();
+  });
+
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    loginBtn.disabled = true;
+    loginBtn.textContent = '로그인 중...';
+    loginError.classList.add('hidden');
+
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+    loginBtn.disabled = false;
+    loginBtn.textContent = '로그인';
+
+    if (error) {
+      loginError.textContent = '이메일 또는 비밀번호가 올바르지 않습니다.';
+      loginError.classList.remove('hidden');
+    }
+  });
+
+  logoutBtn.addEventListener('click', async () => {
+    await supabase.auth.signOut();
+  });
+
+  refreshBtn.addEventListener('click', loadInquiries);
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str ?? '';
+    return div.innerHTML;
+  }
+
+  function formatDate(iso){
+    const d = new Date(iso);
+    return d.toLocaleString('ko-KR', { year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' });
+  }
+
+  function renderRow(row){
+    const isPending = row.status === 'pending';
+    return `
+    <div class="bg-white rounded-2xl shadow-card p-5" data-id="${row.id}">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
+        <div>
+          <p class="font-display font-bold text-base">${escapeHtml(row.name)} <span class="text-sm font-normal text-[var(--ink-soft)]">· ${escapeHtml(row.phone)}</span></p>
+          ${row.grade_class ? `<p class="text-xs text-[var(--ink-soft)] mt-0.5">${escapeHtml(row.grade_class)}</p>` : ''}
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-[var(--ink-soft)]">${formatDate(row.created_at)}</span>
+          <select class="status-select text-xs font-bold rounded-full px-3 py-1.5 border border-[#E4DCC8] ${isPending ? 'bg-[var(--orange-tint)]' : 'bg-[var(--mint-tint)]'}">
+            <option value="pending" ${isPending ? 'selected' : ''}>대기중</option>
+            <option value="completed" ${!isPending ? 'selected' : ''}>완료</option>
+          </select>
+        </div>
+      </div>
+      <p class="text-sm text-[var(--ink)] whitespace-pre-wrap">${escapeHtml(row.message)}</p>
+    </div>`;
+  }
+
+  async function loadInquiries(){
+    const { data, error } = await supabase
+      .from('inquiries')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      inquiryList.innerHTML = `<div class="bg-white rounded-2xl shadow-card p-6 text-sm text-[var(--coral-dark)] font-bold">목록을 불러오지 못했습니다: ${escapeHtml(error.message)}</div>`;
+      return;
+    }
+
+    document.getElementById('statTotal').textContent = data.length;
+    document.getElementById('statPending').textContent = data.filter(r => r.status === 'pending').length;
+    const todayStr = new Date().toDateString();
+    document.getElementById('statToday').textContent = data.filter(r => new Date(r.created_at).toDateString() === todayStr).length;
+
+    if (data.length === 0) {
+      listEmpty.classList.remove('hidden');
+      inquiryList.innerHTML = '';
+      return;
+    }
+    listEmpty.classList.add('hidden');
+    inquiryList.innerHTML = data.map(renderRow).join('');
+
+    inquiryList.querySelectorAll('.status-select').forEach(sel => {
+      sel.addEventListener('change', async (e) => {
+        const card = e.target.closest('[data-id]');
+        const id = card.dataset.id;
+        const newStatus = e.target.value;
+        e.target.disabled = true;
+        const { error } = await supabase.from('inquiries').update({ status: newStatus }).eq('id', id);
+        e.target.disabled = false;
+        if (error) {
+          alert('상태 변경에 실패했습니다: ' + error.message);
+          return;
+        }
+        e.target.className = 'status-select text-xs font-bold rounded-full px-3 py-1.5 border border-[#E4DCC8] ' + (newStatus === 'pending' ? 'bg-[var(--orange-tint)]' : 'bg-[var(--mint-tint)]');
+        document.getElementById('statPending').textContent = document.querySelectorAll('.status-select option[value="pending"]:checked').length;
+      });
+    });
+  }
+</script>
+</body>
+</html>
